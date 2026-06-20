@@ -1,0 +1,134 @@
+body {
+    display: flex; /* 一维弹性布局 */
+    justify-content: center;
+    min-height: 100vh; /* 在 body 设置高度为满，body是块级元素，会自动占满整个视口宽度，就不用写min-width */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* 将边距计入总宽高 */
+    background: #0a0e27;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(78, 136, 106, 0.2) 0%, transparent 50%), /* 渐变 */
+        radial-gradient(circle at 80% 80%, rgba(78, 136, 106, 0.2) 0%, transparent 50%);
+    font-family: 'Courier New', monospace;
+}
+
+#container {
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px 0;
+    color: #4e886a;
+    font-size: 2.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(78, 136, 106, 0.5);
+}
+
+.base64 {
+    background: rgba(20, 25, 45, 0.8);
+    border: 2px solid #4e886a;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 30px rgba(78, 136, 106, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.base64::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4e886a, #2e7d32, #4e886a);
+    border-radius: 12px;
+    z-index: -1; /* 层级控制，放到最后面 */
+    opacity: 0; /* 默认完全透明 */
+    transition: opacity 0.3s;
+}
+
+.base64:hover::before {
+    opacity: 0.3;
+}
+
+.base64 label {
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    color: #4e886a;
+    margin-bottom: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.base64 textarea {
+    width: 100%;
+    padding: 14px;
+    background: rgba(10, 14, 39, 0.6);
+    border: 1px solid #4e886a;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    resize: vertical; /* 只允许垂直调高 */
+    transition: all 0.3s;
+    box-sizing: border-box;
+    
+    scrollbar-color: rgba(78, 136, 106, 0.6) rgba(10, 14, 39, 0.5);
+    /* 第一个颜色 = 滑块，第二个颜色 = 轨道 */
+    scrollbar-width: thin;  /* thin | auto | none */
+}
+
+.base64 textarea:focus {
+    outline: none;
+    border-color: #66bb6a;
+    box-shadow: 0 0 15px rgba(78, 136, 106, 0.5);
+    background: rgba(10, 14, 39, 0.8);
+}
+
+.error-msg {
+    color: #ff5252;
+    font-size: 13px;
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    margin-top: 10px;
+    min-height: 20px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 82, 82, 0.5);
+}
+
+.error-msg:empty {
+    display: none;
+}
+
+.base64 button {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;  /* body 的 padding 也可以减小 */
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin: 20px 0;
+        letter-spacing: 1px;  /* 字间距也缩小 */
+    }
+
+    .base64 {
+        padding: 15px;
+    }
+
+    .base64 textarea {
+        rows: 4;  /* HTML 属性，减少默认高度 */
+    }
+}

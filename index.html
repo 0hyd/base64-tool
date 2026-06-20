@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="imgge/svg+xml" href="icon.svg">
+        <title>base64加解密</title>
+        <link rel="stylesheet" href="base64.css">
+    </head>
+    <body>
+        <div id="container">
+            <h1>base64实时转换</h1>
+            <div class="base64">
+                <label for="input-base64">解码区</label>
+                <textarea rows="6" placeholder="在此输入需解码文本..." id="input-base64"></textarea>
+                <button id="encode">编码</button>
+                <div class="error-msg" id="encode-error"></div>
+            </div>
+            <div class="base64">
+                <label for="input-txt">编码区</label>
+                <textarea rows="6" placeholder="在此输入需编码文本..." id="input-txt"></textarea>
+                <button id="decode">解码</button>
+                <div class="error-msg" id="decode-error"></div>
+            </div>
+        </div>
+        <script src="base64.js"></script>
+        <!-- 项目链接 -->
+        <style>.g{all:unset;display:block;position:fixed;top:12px;right:12px;z-index:9;color:#888;font:14px Arial;cursor:pointer}.g:hover,.g:focus{transform:scale(1.08)}</style><a class=g href="https://github.com/0hyd" target=_blank rel=noreferrer>GitHub</a>
+    </body>
+ </html>
