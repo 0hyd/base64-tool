@@ -1,6 +1,4 @@
 body {
-    display: flex; /* 一维弹性布局 */
-    justify-content: center;
     min-height: 100vh; /* 在 body 设置高度为满，body是块级元素，会自动占满整个视口宽度，就不用写min-width */
     margin: 0;
     padding: 20px;
@@ -10,6 +8,14 @@ body {
         radial-gradient(circle at 20% 50%, rgba(78, 136, 106, 0.2) 0%, transparent 50%), /* 渐变 */
         radial-gradient(circle at 80% 80%, rgba(78, 136, 106, 0.2) 0%, transparent 50%);
     font-family: 'Courier New', monospace;
+}
+
+main {
+    display: flex; /* 一维弹性布局 */
+    flex-direction: column;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 #container {
