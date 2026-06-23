@@ -133,8 +133,4 @@ h1 {
     .base64 {
         padding: 15px;
     }
-
-    .base64 textarea {
-        rows: 4;  /* HTML 属性，减少默认高度 */
-    }
 }
